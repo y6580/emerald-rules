@@ -1,0 +1,36 @@
+//created on: Feb 24, 2020
+package com.wellcare
+
+//list any import classes here.
+import com.wellcare.*;
+
+
+
+//declare any global variables here
+
+
+
+
+rule "Validate Applicant Identifier"
+
+    when
+        ai: ApplicantIdentifier( (identifierTypeCode ==  "MBI" ) || (identifierValue ==  "MBI" ) )
+
+    then
+        //actions
+		ai.setEnrollmentRequestSurrogateKey(77);
+end
+
+
+rule "Validate Enrollment"
+
+    when
+		e: Enrollment( 	(applicantDOB < 1900) 
+						|| (applicantDOB > 2999)
+						|| (genderTypeCode not in ( "M", "F", "U" )))
+
+    then
+        //actions
+        e.setApplicantFirstName("Yokesh");
+		insertLogical (new Message("001","Error 01",123));
+end
