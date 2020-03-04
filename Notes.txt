@@ -1,0 +1,30 @@
+curl -X POST \
+  https://rhpam-kieserver-pam76.4c8f.wc-sb01.openshiftapps.com/services/rest/server/containers/instances/Emerald_1.0.0-SNAPSHOT \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic eW9rZXNoOnJlZGhhdA==' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 5d497bf3-b697-b93a-153e-93970fcdcfd8' \
+  -d '{
+	"commands": [
+		{
+			"insert": {
+				"out-identifier": "ai",
+				"return-object": "true",
+				"object": {
+					"com.wellcare.ApplicantIdentifier":
+					{
+						"identifierTypeCode": "MBI",
+						"identifierValue": "DEF"
+					}
+				}
+			}
+		},
+		{
+			"fire-all-rules": ""
+		},
+        {
+                "dispose": {}
+        }
+	]
+}'
