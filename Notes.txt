@@ -28,3 +28,6 @@ curl -X POST \
         }
 	]
 }'
+
+
+http://static.opendigitalautomation.com/rhpam75_enablement/24_SpringBoot/24_1_SpringBoot.html#_create_an_spring_boot_project
