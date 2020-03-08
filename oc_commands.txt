@@ -1,0 +1,2 @@
+oc exec <pod name> -i -t --  ps auxww
+
