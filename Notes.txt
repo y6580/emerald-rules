@@ -31,3 +31,11 @@ curl -X POST \
 
 
 http://static.opendigitalautomation.com/rhpam75_enablement/24_SpringBoot/24_1_SpringBoot.html#_create_an_spring_boot_project
+
+rm -rf /tmp/sb-process-server-openshift
+mkdir -p /tmp/sb-process-server-openshift/m2/repository
+cp /usr/local/sboot/sb-process-server/src/main/docker/Dockerfile /tmp/sb-process-server-openshift/
+cp target/sb-process-server-1.1.0.jar /tmp/sb-process-server-openshift/
+cp sb-process-server.xml /tmp/sb-process-server-openshift
+cp /usr/local/sboot/sb-process-server/src/main/docker/settings.xml /tmp/sb-process-server-openshift/m2
+cp -R /usr/local/sboot/simple-kjar/target/local-repository/maven/* /tmp/sb-process-server-openshift/m2/repository
