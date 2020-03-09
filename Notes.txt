@@ -39,3 +39,31 @@ cp target/sb-process-server-1.1.0.jar /tmp/sb-process-server-openshift/
 cp sb-process-server.xml /tmp/sb-process-server-openshift
 cp /usr/local/sboot/sb-process-server/src/main/docker/settings.xml /tmp/sb-process-server-openshift/m2
 cp -R /usr/local/sboot/simple-kjar/target/local-repository/maven/* /tmp/sb-process-server-openshift/m2/repository
+
+
+
+2020-03-09 10:01:42.126  INFO 25394 --- [           main] o.k.server.services.impl.KieServerImpl   : Configured 'KieServerStateFileRepository' server state repository
+2020-03-09 10:01:42.184  INFO 25394 --- [           main] o.k.s.s.impl.storage.KieServerState      : Added default controller located at https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management
+2020-03-09 10:01:42.193  INFO 25394 --- [           main] o.k.server.services.impl.KieServerImpl   : Server Default Extension has been successfully registered as server extension
+2020-03-09 10:01:42.195  INFO 25394 --- [           main] o.k.server.services.impl.KieServerImpl   : Drools KIE Server extension has been successfully registered as server extension
+2020-03-09 10:01:42.264  INFO 25394 --- [           main] o.k.s.api.marshalling.MarshallerFactory  : Marshaller extensions init
+2020-03-09 10:01:42.319  INFO 25394 --- [           main] o.k.server.services.impl.KieServerImpl   : jBPM KIE Server extension has been successfully registered as server extension
+2020-03-09 10:01:42.322  INFO 25394 --- [           main] o.k.server.services.impl.KieServerImpl   : Case-Mgmt KIE Server extension has been successfully registered as server extension
+2020-03-09 10:01:42.649  INFO 25394 --- [           main] o.k.s.s.j.u.f.r.BootstrapFormRenderer    : Boostrap Form renderer templates loaded successfully.
+2020-03-09 10:01:42.670  INFO 25394 --- [           main] o.k.s.s.j.u.f.r.PatternflyFormRenderer   : patternfly Form renderer templates loaded successfully.
+2020-03-09 10:01:42.679  INFO 25394 --- [           main] o.k.s.s.j.u.f.r.PatternflyFormRenderer   : workbench Form renderer templates loaded successfully.
+2020-03-09 10:01:42.680  INFO 25394 --- [           main] o.k.server.services.impl.KieServerImpl   : jBPM-UI KIE Server extension has been successfully registered as server extension
+2020-03-09 10:01:42.682  INFO 25394 --- [           main] o.k.server.services.impl.KieServerImpl   : DMN KIE Server extension has been successfully registered as server extension
+2020-03-09 10:01:42.690  INFO 25394 --- [           main] o.k.s.s.impl.policy.PolicyManager        : Registered KeepLatestContainerOnlyPolicy{interval=0 ms} policy under name KeepLatestOnly
+2020-03-09 10:01:42.696  INFO 25394 --- [           main] o.k.s.s.impl.policy.PolicyManager        : Policy manager started successfully, activated policies are []
+2020-03-09 10:01:42.702  WARN 25394 --- [           main] o.kie.server.common.KeyStoreHelperUtil   : Unable to load key store. Using password from configuration
+2020-03-09 10:01:43.769  WARN 25394 --- [           main] o.k.s.s.i.c.DefaultRestControllerImpl    : Exception encountered while syncing with controller at https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev error Error while sending PUT request to https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev response code 401
+2020-03-09 10:01:43.774  WARN 25394 --- [           main] o.k.s.s.i.ControllerBasedStartupStrategy : Unable to connect to any controllers, delaying container installation until connection can be established
+2020-03-09 10:01:43.963  INFO 25394 --- [           main] o.k.s.s.a.KieServerAutoConfiguration     : KieServer (id sb-process-server-dev) started successfully
+2020-03-09 10:01:43.973  WARN 25394 --- [ntrollerConnect] o.k.s.s.i.c.DefaultRestControllerImpl    : Exception encountered while syncing with controller at https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev error Error while sending PUT request to https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev response code 401
+2020-03-09 10:01:44.899  INFO 25394 --- [           main] org.apache.cxf.endpoint.ServerImpl       : Setting the server's publish address to be /
+2020-03-09 10:01:45.685  INFO 25394 --- [           main] org.reflections.Reflections              : Reflections took 109 ms to scan 8 urls, producing 58 keys and 127 values
+2020-03-09 10:01:48.756  INFO 25394 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-03-09 10:01:48.772  INFO 25394 --- [           main] org.kie.Application                      : Started Application in 51.774 seconds (JVM running for 53.946)
+2020-03-09 10:01:54.119  WARN 25394 --- [ntrollerConnect] o.k.s.s.i.c.DefaultRestControllerImpl    : Exception encountered while syncing with controller at https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev error Error while sending PUT request to https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev response code 401
+
