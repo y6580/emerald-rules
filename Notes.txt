@@ -67,3 +67,14 @@ cp -R /usr/local/sboot/simple-kjar/target/local-repository/maven/* /tmp/sb-proce
 2020-03-09 10:01:48.772  INFO 25394 --- [           main] org.kie.Application                      : Started Application in 51.774 seconds (JVM running for 53.946)
 2020-03-09 10:01:54.119  WARN 25394 --- [ntrollerConnect] o.k.s.s.i.c.DefaultRestControllerImpl    : Exception encountered while syncing with controller at https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev error Error while sending PUT request to https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management/server/sb-process-server-dev response code 401
 
+
+
+#kie server config
+kieserver.serverId=sb-process-server-dev
+kieserver.serverName=sb-process-server Dev
+kieserver.location=http://localhost:8090/rest/server
+#kieserver.controllers=http://localhost:8080/business-central/rest/controller
+kieserver.controllers=https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.openshiftapps.com/rest/controller/management
+org.kie.server.controller.user=controllerUser
+org.kie.server.controller.pwd=fMUfgb3!
+
