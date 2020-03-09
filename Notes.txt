@@ -79,7 +79,7 @@ org.kie.server.controller.user=controllerUser
 org.kie.server.controller.pwd=fMUfgb3!
 
 
-GO request
+GO request body
 /brms/{container name}/invoke
 
 {
@@ -95,7 +95,7 @@ GO request
   }
 }
 
-PAM Request
+PAM Request body
 /services/rest/server/containers/instances/{container name}
 
 {
@@ -116,24 +116,7 @@ PAM Request
 }
 
 
-Go Response
-
-{
-  "ruleflow-group": "ruleflow group name",
-  "out-identifier": "ai",
-  "object": {
-    "com.wellcare.ApplicantIdentifier": {
-      "enrollmentApplicantIdentifierSurrogateKey": 0,
-      "enrollmentRequestSurrogateKey": 0,
-      "identifierTypeCode": "sad",
-      "identifierValue": "qwe"
-    }
-  },
-  "type": "SUCCESS"
-}
-
-
-PAM Response
+PAM Response body
 
 {
     "type": "SUCCESS",
@@ -167,6 +150,72 @@ PAM Response
     }
 }
 
+result -> execution-results -> results -> value will be populated under the Go response data
 
-result -> execution-results -> results -> value will be populated under the Go response object
+
+GO Response body
+
+{
+  "success": true,
+  "data": [
+    {
+      "com.wellcare.ApplicantIdentifier": {
+        "enrollmentApplicantIdentifierSurrogateKey": 0,
+        "enrollmentRequestSurrogateKey": 0,
+        "identifierTypeCode": "sad",
+        "identifierValue": "qwe"
+      },
+      "type": "SUCCESS",
+      "out-identifier": "ai"
+    }
+  ],
+  "metadata": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "messages": [
+    {
+      "code": "string",
+      "type": "string",
+      "message": "string",
+      "dataIndex": "string"
+    }
+  ]
+}
+
+
+
+{
+  "success": true,
+  "data": [
+    {
+	"com.wellcare.ApplicantIdentifier": {
+      "enrollmentApplicantIdentifierSurrogateKey": 0,
+      "enrollmentRequestSurrogateKey": 0,
+      "identifierTypeCode": "sad",
+      "identifierValue": "qwe"
+	}
+		"type": "SUCCESS",
+		"out-identifier": "ai",
+
+    }
+  ],
+  "metadata": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "messages": [
+    {
+      "code": "string",
+      "type": "string",
+      "message": "string",
+      "dataIndex": "string"
+    }
+  ]
+}
+
+
+
 
