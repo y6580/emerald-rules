@@ -78,3 +78,95 @@ kieserver.controllers=https://rhpam-rhpamcentr-app-rh-pam741.4c8f.wc-sb01.opensh
 org.kie.server.controller.user=controllerUser
 org.kie.server.controller.pwd=fMUfgb3!
 
+
+GO request
+/brms/{container name}/invoke
+
+{
+  "ruleflow-group": "ruleflow group name",
+  "fire-all-rules": "",
+  "out-identifier": "ai",
+  "return-object": "true",
+  "object": {
+    "com.wellcare.ApplicantIdentifier": {
+      "identifierTypeCode": "sad",
+      "identifierValue": "qwe"
+    }
+  }
+}
+
+PAM Request
+/services/rest/server/containers/instances/{container name}
+
+{
+  "commands": [
+    {
+      "insert": {
+        "out-identifier": "ai",
+        "return-object": "true",
+        "object": {
+          "com.wellcare.ApplicantIdentifier": {
+            "identifierTypeCode": "sad",
+            "identifierValue": "qwe"
+          }
+        }
+      }
+    }
+  ]
+}
+
+
+Go Response
+
+{
+  "ruleflow-group": "ruleflow group name",
+  "out-identifier": "ai",
+  "object": {
+    "com.wellcare.ApplicantIdentifier": {
+      "enrollmentApplicantIdentifierSurrogateKey": 0,
+      "enrollmentRequestSurrogateKey": 0,
+      "identifierTypeCode": "sad",
+      "identifierValue": "qwe"
+    }
+  },
+  "type": "SUCCESS"
+}
+
+
+PAM Response
+
+{
+    "type": "SUCCESS",
+    "msg": "Container Emerald_1.0.0-SNAPSHOT successfully called.",
+    "result": {
+        "execution-results": {
+            "results": [
+                {
+                    "value": {
+                        "com.wellcare.ApplicantIdentifier": {
+                            "enrollmentApplicantIdentifierSurrogateKey": 0,
+                            "enrollmentRequestSurrogateKey": 0,
+                            "identifierTypeCode": "sad",
+                            "identifierValue": "qwe"
+                        }
+                    },
+                    "key": "ai"
+                }
+            ],
+            "facts": [
+                {
+                    "value": {
+                        "org.drools.core.common.DefaultFactHandle": {
+                            "external-form": "0:1:1803976863:1803976863:1:DEFAULT:NON_TRAIT:com.wellcare.ApplicantIdentifier"
+                        }
+                    },
+                    "key": "ai"
+                }
+            ]
+        }
+    }
+}
+
+
+result -> execution-results -> results -> value will be populated under the Go response object
+
